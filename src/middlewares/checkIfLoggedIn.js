@@ -1,6 +1,5 @@
-function checkIfUserLoggedIn(_, res, next) {
-	// TODO
-	const isLoggedIn = true;
+function checkIfUserLoggedIn(req, res, next) {
+	const isLoggedIn = req.isAuthenticated() && req.user;
 
 	if (!isLoggedIn) {
 		return res.status(401).json({
