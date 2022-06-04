@@ -21,6 +21,9 @@ authRouter.get(
 	}
 );
 
-authRouter.get('/auth/logout', () => {});
+authRouter.get('/auth/logout', (req, res) => {
+	req.logout();
+	return res.redirect('/');
+});
 
 module.exports = authRouter;
